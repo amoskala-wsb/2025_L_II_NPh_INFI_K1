@@ -4,11 +4,13 @@ jobs:
   build-and-test:
     machine:
       image: ubuntu-2204:2024.01.2
+
     steps:
       - checkout
       - run: make deps
       - run: make lint
       - run: make test
+      - run: make docker_build
 
 workflows:
   basic:
